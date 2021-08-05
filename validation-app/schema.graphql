@@ -1,0 +1,13 @@
+type Query {
+   greeting:String
+}
+
+type Mutation {
+   signUp(input:SignUpInput):String
+}
+
+input SignUpInput {
+   email:String!,
+   password:String!,
+   firstName:String!
+}

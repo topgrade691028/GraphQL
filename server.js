@@ -7,9 +7,12 @@ const port = process.env.PORT || 9000;
 const app = express();
 
 const fs = require('fs')
+//first base example
 const typeDefs = fs.readFileSync('./schema.graphql',{encoding:'utf-8'})
 const resolvers = require('./resolvers')
-
+//second login example
+// const typeDefs = fs.readFileSync('./validation-app/schema.graphql',{encoding:'utf-8'})
+// const resolvers = require('./validation-app/resolvers')
 const {makeExecutableSchema} = require('graphql-tools')
 const schema = makeExecutableSchema({typeDefs, resolvers})
 

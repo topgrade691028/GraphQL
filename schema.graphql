@@ -26,3 +26,7 @@ enum ColorType {
    BLUE
    GREEN
 }
+type Mutation {
+addStudent_returns_object(collegeId:ID,firstName:String,lastName:String):Student
+   createStudent(collegeId:ID,firstName:String,lastName:String):String
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script>
+         $(document).ready(function() {
+
+            $("#btnSayhello").click(function() {
+
+               const name = $("#txtName").val();
+               console.log(name);
+               $("#SayhelloDiv").html('loading....');
+
+               $.ajax({url: "http://localhost:9000/graphql",
+                  contentType: "application/json",type:'POST',
+                  data: JSON.stringify({ query:`{
+                     sayHello(name:"${name}")}`
+                  }),
+                  success: function(result) {
+                     console.log(JSON.stringify(result))
+                     $("#SayhelloDiv").html("<h1>"+result.data.sayHello +"</h1>");
+                  }
+               });
+            });
+            
+            $("#btnGreet").click(function() {
+               $("#greetingDiv").html('loading....');
+               //https://kannan-first-graphql-app.herokuapp.com/graphql
+               $.ajax({url: "http://localhost:9000/graphql",
+                  contentType: "application/json",
+                  type:'POST',
+                  data: JSON.stringify({
+                     query:`{greeting}`
+                  }),
+                  success: function(result) {
+                     $("#greetingDiv").html("<h1>"+result.data.greeting+"</h1>");
+                  }
+               });
+            });
+         });
+      </script>
+   </head>
+   
+   <body>
+      <h1>Jquery Client </h1>
+
+      <hr/>
+      <section>
+         <button id = "btnGreet">Greet</button>
+         <br/> <br/>
+         <div id = "greetingDiv"> </div>
+      </section>
+      
+      <br/> <br/> <br/>
+      <hr/>
+
+      <section>
+         Enter a name:<input id = "txtName" type = "text" value = "kannan"/>
+         <button id = "btnSayhello">SayHello</button>
+         <div id = "SayhelloDiv"> </div>
+      </section>
+   </body>
+</html>
