@@ -1,0 +1,28 @@
+[
+    {
+       "id": "S1001",
+       "firstName":"Mohtashim",
+       "lastName":"Mohammad",
+       "email": "mohtashim.mohammad@tutorialpoint.org",
+       "password": "pass123",
+       "collegeId": "col-102"
+    },
+    
+    {
+       "id": "S1002",
+       "email": "kannan.sudhakaran@tutorialpoint.org",
+       "firstName":"Kannan",
+       "lastName":"Sudhakaran",
+       "password": "pass123",
+       "collegeId": "col-101"
+    },
+    
+    {
+       "id": "S1003",
+       "email": "kiran.panigrahi@tutorialpoint.org",
+       "firstName":"Kiran",
+       "lastName":"Panigrahi",
+       "password": "pass123",
+       "collegeId": "col-101"
+    }
+ ]
